@@ -1,0 +1,22 @@
+<button type="submit" (click)="openDialog()">Add Student</button>
+
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Roll No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of student">
+        <td>{{item.Name}}</td>
+        <td>{{item.Class}}</td>
+        <td>{{item.Roll_No}}</td>
+        <button type="button" class="btn-option" (click)="openEditDialog(item)">edit</button>
+        <button type="button" class=" btn-option delete" 
+        (click)="openDeleteDialog(item._id)">delete</button>
+      </tr>
+    </tbody>
+  </table>
+  

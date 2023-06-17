@@ -1,0 +1,22 @@
+<h2 mat-dialog-title style="font-weight: 600;margin-bottom: 10px;">Student Data</h2>
+<div mat-dialog-content>
+    <form>
+        <mat-form-field>
+          <input matInput placeholder="{{data.Name}}" [(ngModel)]="name" name="name" value={{data.Name}}>
+        </mat-form-field>
+    
+        <mat-form-field>
+          <input matInput placeholder="{{data.Class}}" [(ngModel)]="class" name="class" value={{data.Class}}>
+        </mat-form-field>
+    
+        <mat-form-field>
+          <input matInput placeholder="{{student_rollno}}" [(ngModel)]="rollNo" name="rollNo">
+        </mat-form-field>
+      </form>
+</div>
+<div mat-dialog-actions style="margin-left: 14px;">
+    <button type="submit" style="padding: 5px; cursor: pointer;
+    font-size: 16px;" (click)="onCancelClick()">Cancel</button>
+    <button type="submit" style="padding: 5px; margin-left: 10px; cursor: pointer; font-size: 16px; background-color: #4CAF50; color: white;" (click)="onSaveClick()">Save</button>
+
+</div>

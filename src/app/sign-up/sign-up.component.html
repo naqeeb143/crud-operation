@@ -1,0 +1,36 @@
+<div class="form-box">
+    <form [formGroup]="signupForm" class="form" (ngSubmit)="signUser(signupForm)">
+        <span class="title">Sign up</span>
+        <span class="subtitle">Create a free account with your email.</span>
+        <div class="form-container">
+          <input type="text" class="input" placeholder="Full Name"  name="name" formControlName="name" >
+          <div *ngIf="signUp['name'].hasError('pattern')" style="color: red;">
+            Name must contain only letters and spaces.
+          </div>
+          <div *ngIf="signUp['name'].touched && signUp['name'].hasError('required')" style="color: red;">Please Enter Name</div>
+          <div *ngIf="signUp['name'].hasError('minlength')" style="color: red;">
+            Name must be at least 3 characters long.
+          </div>
+          <input type="email" class="input" placeholder="Email" name="email"
+          formControlName="email">
+          <div *ngIf="signUp['email'].touched && signUp['email'].hasError('required')" style="color: red;">Please Enter Email
+          </div>
+          <div *ngIf="signUp['email'].hasError('pattern')" style="color: red;">
+            Please Enter valid Email.
+           </div>
+          <input type="password" class="input" placeholder="Password" name="password" formControlName="password">
+          <div *ngIf="signUp['password'].touched && signUp['password'].hasError('required')" style="color: red;">Please Enter Password</div>
+          <div *ngIf="signUp['password'].hasError('pattern')" style="color: red">'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character.'</div>
+          <input type="text" class="input" placeholder="Gender" name="gender" formControlName="gender">
+          <div *ngIf="signUp['gender'].touched && signUp['gender'].hasError('required')" style="color: red;">  Please type Gender</div>
+          <input type="number" class="input" placeholder="Phone No" name="phone" formControlName="phoneNo">
+          <div *ngIf="signUp['phoneNo'].touched && signUp['phoneNo'].hasError('required')"  style="color: red;">Please Enter Number</div>
+          <div *ngIf="signUp['phoneNo'].hasError('pattern')" style="color: red;">Please Enter valid Number
+          </div>
+        </div>
+        <button>Sign up</button>
+    </form>
+    <div class="form-section">
+      <p>Have an account? <a href="">Log in</a> </p>
+    </div>
+    </div>

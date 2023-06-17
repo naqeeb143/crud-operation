@@ -1,0 +1,10 @@
+<div class="form-container">
+    <p>Login</p>
+<form #login="ngForm" class="form" (ngSubmit)= "onSubmit (login.value)">
+    <label>Email</label>
+    <input type="text" class="input" placeholder="Enter yout email" [(ngModel)]="email" name="email">
+    <label>Password</label>
+    <input type="password" class="input" placeholder="Password"[(ngModel)]="password" name="password"> 
+    <button type="submit">Submit </button>
+
+</form>
